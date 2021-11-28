@@ -1,0 +1,6 @@
+/build/
+/public/
+/config/
+/dist/
+/*.js
+/src/types/

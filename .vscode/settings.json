@@ -1,0 +1,10 @@
+{
+  "editor.tabSize": 2,
+  // 保存的时候格式化代码
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": ".prettierrc.js" // 这里直接读取项目的 prettier 配置文件
+}
