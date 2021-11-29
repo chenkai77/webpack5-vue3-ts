@@ -13,5 +13,6 @@ module.exports = {
   extends: ['plugin:vue/recommended', 'plugin:prettier/recommended'],
   rules: {
     indent: ['warn', 2], //缩进风格
+    'vue/require-default-prop': off, // 允许className做prop
   },
 }
