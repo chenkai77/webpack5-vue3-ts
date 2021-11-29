@@ -1,7 +1,9 @@
 <template>
   <div>
     <el-button v-throttling="fun" type="primary">按钮</el-button>
-    <svg-icon icon-class="menu-icon" class="menu-icon" />
+    <div>
+      <svg-icon icon-class="menu-icon" class="menu-icon" />
+    </div>
   </div>
 </template>
 
