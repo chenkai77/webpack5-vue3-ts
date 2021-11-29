@@ -1,17 +1,17 @@
-const { resolve, babelLoaderConf } = require("./utils.js");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const vueLoader = require("vue-loader");
-// const Components = require('unplugin-vue-components/webpack')
-// const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+const { resolve, babelLoaderConf } = require('./utils.js')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const vueLoader = require('vue-loader')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = {
   entry: {
-    app: resolve("src/index.ts"),
+    app: resolve('src/index.ts'),
   },
   resolve: {
-    extensions: [".js", ".vue", ".json", ".ts", ".tsx", ".mjs"],
+    extensions: ['.js', '.vue', '.json', '.ts', '.tsx', '.mjs'],
     alias: {
-      "@": resolve("src"),
+      '@': resolve('src'),
     },
   },
   module: {
@@ -21,7 +21,7 @@ module.exports = {
         test: /\.vue$/,
         use: [
           {
-            loader: "vue-loader",
+            loader: 'vue-loader',
           },
         ],
         include: /(src)/,
@@ -33,37 +33,37 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: "svg-sprite-loader",
-        include: [resolve("src/assets/svg")],
+        loader: 'svg-sprite-loader',
+        include: [resolve('src/assets/svg')],
         options: {
-          symbolId: "icon-[name]",
+          symbolId: 'icon-[name]',
         },
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        type: "asset",
+        type: 'asset',
         parser: {
           dataUrlCondition: {
             maxSize: 10 * 1024,
           },
         },
         generator: {
-          filename: "images/[base]",
+          filename: 'images/[base]',
         },
-        exclude: [resolve("src/assets/svg")],
+        exclude: [resolve('src/assets/svg')],
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        type: "asset",
+        type: 'asset',
         generator: {
-          filename: "files/[base]",
+          filename: 'files/[base]',
         },
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        type: "asset",
+        type: 'asset',
         generator: {
-          filename: "media/[base]",
+          filename: 'media/[base]',
         },
       },
       // element-plus
@@ -73,7 +73,7 @@ module.exports = {
         resolve: {
           fullySpecified: false,
         },
-        type: "javascript/auto",
+        type: 'javascript/auto',
       },
     ],
   },
@@ -82,18 +82,18 @@ module.exports = {
     // vue-loader插件
     new vueLoader.VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: resolve("public/index.html"),
-      favicon: resolve("public/favicon.ico"),
+      filename: 'index.html',
+      template: resolve('public/index.html'),
+      favicon: resolve('public/favicon.ico'),
       inject: true,
     }),
     // element-plus 按需引入
-    // Components({
-    //   resolvers: [
-    //     ElementPlusResolver({
-    //       importStyle: false,
-    //     }),
-    //   ],
-    // }),
+    Components({
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: false,
+        }),
+      ],
+    }),
   ],
-};
+}

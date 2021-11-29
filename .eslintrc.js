@@ -10,12 +10,7 @@ module.exports = {
     ecmaVersion: 12,
   },
   plugins: ['vue', '@typescript-eslint'],
-  extends: [
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['plugin:vue/recommended', 'plugin:prettier/recommended'],
   rules: {
     indent: ['warn', 2], //缩进风格
   },

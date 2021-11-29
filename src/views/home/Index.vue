@@ -1,20 +1,14 @@
 <template>
-  <div>
-    home
-    <div class="aa" v-if="aa"></div>
-  </div>
+  <div>home</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  setup() {
-    const aa = '88'
-    console.log(aa)
-  },
+  name: 'HomePage',
+  setup() {},
   data() {
     return {}
   },
-  name: 'Home',
 })
 </script>
