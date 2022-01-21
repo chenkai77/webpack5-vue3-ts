@@ -75,6 +75,7 @@ const devWebpackConfig = merge(common, {
     port: 8080, // 端口号
     open: false, // 自动打开
     hot: true, // 热更新
+    allowedHosts: 'all',
     client: {
       progress: true, // 将运行进度输出到控制台。
       overlay: { warnings: false, errors: true }, // 全屏显示错误信息
